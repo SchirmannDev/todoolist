@@ -1,20 +1,27 @@
 import React from 'react';
+import {Keyboard, TouchableWithoutFeedback} from 'react-native';
+import Button from '../../components/Button';
 
 import * as S from './styles';
 
 const Home = () => {
   return (
-    <S.Container>
-      <S.Header>
-        <S.Title>Olá Esportista</S.Title>
-      </S.Header>
+    <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+      <S.Container>
+        <S.Header>
+          <S.Title>Olá Esportista</S.Title>
+        </S.Header>
 
-      <S.Input
-        placeholder="Qual exercicio realizei"
-        placeholderTextColor="#fff"
-      />
-      <S.Title>Seus esportes praticados:</S.Title>
-    </S.Container>
+        <S.Form>
+          <S.Input
+            placeholder="Qual exercicio realizei"
+            placeholderTextColor="#fbc1bf"
+          />
+          <S.Title>Seus esportes praticados:</S.Title>
+          <Button title="Adicionar" />
+        </S.Form>
+      </S.Container>
+    </TouchableWithoutFeedback>
   );
 };
 
